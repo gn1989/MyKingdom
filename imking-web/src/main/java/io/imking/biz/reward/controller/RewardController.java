@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/reward")
 public class RewardController {
 
-    @RequestMapping("/loginSuccess")
+    @RequestMapping("/rewardList")
     public Result<String> loginSuccess(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication() ;
 
         return new Result<>(ResultEnum.SUCCESS , authentication.getName()) ;
     }
 
-    @RequestMapping("/loginFailure")
+    @RequestMapping("/rewardDel")
     public Result<String> loginFailure(){
 
         return new Result<>(ResultEnum.SERVER_ERROR , "账号或密码错误" ) ;
